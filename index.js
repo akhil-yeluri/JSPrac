@@ -5,22 +5,20 @@ import './style.css';
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
-const arr = ['akhil', 'yeluri', 'angular','developer'];
+const arr = ['akhil', 'yeluri', 'angular', 'developer'];
 
 let output = '';
 
+//promises basically used for async calls
 function a() {
-return new Promise((resolve,reject)=>
-{
-  arr.forEach((arrs) => {
-    output +=' '+ arrs;
-  })
-  reject('by Default resolve')
-})
+  return new Promise((resolve, reject) => {
+    arr.forEach((arrs) => {
+      output += ' ' + arrs;
+    });
+
+    reject('Error Test');
+  });
 }
 
-a().
-then(document.body.innerHTML = '<h1>'+output+'<h1>')
-.catch(document.body.innerHTML = '<h1>'+'AKHIL YELURI ANGULAR DEVELOPER')
-
-
+a().then((console.log('akhil yeluri')))
+.catch(err=>console.log(err))
